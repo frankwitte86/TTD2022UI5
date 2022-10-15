@@ -1,14 +1,13 @@
 {
-    "name": "example-jamal",
+    "name": "UI5 Automation framework",
     "version": "1.0.0",
-    "description": "",
+    "description": "UI5 Automation Framework",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "wdio": "wdio run wdio.conf.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Joris Kellendonk",
     "license": "ISC",
     "devDependencies": {
         "@wdio/cli": "^7.25.1",
