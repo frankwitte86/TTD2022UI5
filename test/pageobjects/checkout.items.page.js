@@ -183,7 +183,6 @@ class CheckOutPageItems extends Page {
         return await srcImageCheckOutPortableDVD;
     }
 
-
     async getTextGrandTotal() {
         const textGrandTotalSelector = await browser.asControl(this.grandTotalSelector).getText();
         return await textGrandTotalSelector;
@@ -213,9 +212,6 @@ class CheckOutPageItems extends Page {
         await browser.asControl(this.nextStepButton).press();
 
     }
-
-
-
 
     open() {
         return super.open('index.html');

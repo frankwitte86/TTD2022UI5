@@ -23,6 +23,18 @@ class CheckOutPageOverview extends Page {
         return confirmButtonSelector
     }
 
+    get cancelButtonSelector() {
+        const cancelButtonSelector = {
+            selector: {
+                id: "container-cart---checkoutView--cancelOrder",
+                interaction: {
+                    idSuffix: "BDI-content"
+                }
+            }
+        }
+        return cancelButtonSelector
+    }
+
     get confirmationButtonPopUpSelector() {
         const confirmationButtonPopUpSelector = {
 
@@ -37,12 +49,47 @@ class CheckOutPageOverview extends Page {
         return confirmationButtonPopUpSelector
     }
 
+    get confirmationButtonCancelPopUpSelector() {
+        const confirmationButtonCancelPopUpSelector = {
+            selector: {
+                controlType: "sap.m.Button",
+                properties: {
+                    text: "Yes"
+                },
+                searchOpenDialogs: true,
+                interaction: {
+                    idSuffix: "inner"
+                }
+            }
+        }
+        return confirmationButtonCancelPopUpSelector
+    }
+
+
+
+
     async pressconfirmButton() {
         await browser.asControl(this.confirmButtonSelector).firePress();
     }
 
     async pressconfirmButtonPopUp() {
         await browser.asControl(this.confirmationButtonPopUpSelector).firePress();
+    }
+
+    async presscancelButton() {
+        await browser.asControl(this.cancelButtonSelector).firePress();
+    }
+
+    async pressCancelButtonPopUp() {
+        await browser.asControl(this.confirmationButtonPopUpSelector).firePress();
+    }
+
+    async pressconfirmButtonPopUp() {
+        await browser.asControl(this.confirmationButtonPopUpSelector).firePress();
+    }
+
+    async pressconfirmButtonCancelPopUp() {
+        await browser.asControl(this.confirmationButtonCancelPopUpSelector).firePress();
     }
 
     async getTextDeliveryTypes() {
