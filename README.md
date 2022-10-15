@@ -6,7 +6,7 @@ Clone deze repo in je IDE naar keuze. Op de TTD kun je hier je basis ophalen om 
 Shopping cart URL: https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html
 
 Starten van de installatie:
-``` npm install
+``` npm install ```
 
 Starten van de tests:
-``` npx wdio
+``` npx wdio ```
