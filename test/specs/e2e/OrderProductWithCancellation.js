@@ -13,7 +13,7 @@ const CheckOutPageShippingAddress = require('../../pageobjects/checkout.shipping
 const CheckOutPageOverview = require('../../pageobjects/checkout.overview.page');
 const OrderCompletedPage = require('../../pageobjects/checkout.completed');
 
-describe('Shopping Cart - Credit Card Flow', () => {
+describe('Shopping Cart - Cancellation Flow', () => {
 
     it('Open Shopping Cart app', async () => {
         browser.maximizeWindow();

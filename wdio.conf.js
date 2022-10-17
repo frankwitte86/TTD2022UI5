@@ -150,7 +150,7 @@ exports.config = {
         ['junit', {
             outputDir: './test/junit/',
             outputFileFormat: function (options) { // optional
-                return ('juni-testreport-' + Date.now() + '.xml')
+                return ('jUnit-testreport-' + Date.now() + '.xml')
             }
         }]
     ],
