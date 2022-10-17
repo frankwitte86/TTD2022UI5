@@ -41,7 +41,7 @@ class CheckOutPageOverview extends Page {
             selector: {
                 controlType: "sap.m.Button",
                 properties: {
-                    text: "Ja"
+                    text: "Yes"
                 },
                 searchOpenDialogs: true
             }
@@ -54,7 +54,7 @@ class CheckOutPageOverview extends Page {
             selector: {
                 controlType: "sap.m.Button",
                 properties: {
-                    text: "Yes"
+                    text: "No"
                 },
                 searchOpenDialogs: true,
                 interaction: {

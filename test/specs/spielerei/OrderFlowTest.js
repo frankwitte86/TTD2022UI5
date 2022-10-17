@@ -127,7 +127,7 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
         // expect(await CheckOutPageItems.getTextStatusCheckOutPortableDVD()).toEqual("Available");
         // expect(await CheckOutPageItems.getStateStatusCheckOutPortableDVD()).toEqual("Success");
         expect(await CheckOutPageItems.getTextGrandTotal()).toEqual("Total: 449,99 EUR");
-        expect(await CheckOutPageItems.getTextNextStepButton()).toEqual("Stap 2");
+        expect(await CheckOutPageItems.getTextNextStepButton()).toEqual("Step 2");
         expect(await CheckOutPageItems.getEnabledNextStepButton()).toBeTruthy();
         await CheckOutPageItems.pressNextStepButton();
     })
@@ -142,7 +142,7 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
         await CheckOutPagePaymentType.pressCashOnDeliveryButton();
         expect(await CheckOutPagePaymentType.getTextCreditCardButton()).toEqual("Credit Card")
         await CheckOutPagePaymentType.pressCreditCardButton();
-        expect(await CheckOutPagePaymentType.getTextNextButton()).toEqual("Stap 3")
+        expect(await CheckOutPagePaymentType.getTextNextButton()).toEqual("Step 3")
         await CheckOutPagePaymentType.pressNextButton();
 
 
