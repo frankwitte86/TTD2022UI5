@@ -36,18 +36,7 @@ class OrderCompletedPage extends Page {
         return returnToShopButtonSelector
     }
 
-    get enlargeButtonSelector() {
-        const enlargeButtonSelector = {
-            selector: {
-                id: "container-cart---app--layout-midForward-img"
-            }
-        }
-        return enlargeButtonSelector
-    }
-
-
-
-    async getTextOrderConfirmation() {
+     async getTextOrderConfirmation() {
         const textOrderCormfirmation = await browser.asControl(this.orderConfirmationTextSelector).getHtmlText();
         return await textOrderCormfirmation;
     }
@@ -56,9 +45,6 @@ class OrderCompletedPage extends Page {
         await browser.asControl(this.returnToShopButtonSelector).firePress();
     }
 
-    async pressEnlargeButton() {
-        await browser.asControl(this.enlargeButtonSelector).firePress();
-    }
 
 
 

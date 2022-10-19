@@ -60,7 +60,7 @@ exports.config = {
         acceptInsecureCerts: true
         ,
         "goog:chromeOptions": {
-            args: ["--window-size=1440,800", "--headless", "--log-level=2", "--lang=en-US"]
+            args: ["--window-size=1440,800", "--headless", "--log-level=3", "--lang=en-US"]
         },
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.

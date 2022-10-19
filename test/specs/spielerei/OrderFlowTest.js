@@ -186,7 +186,6 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
     })
 
     it('Verify Order Confirmation Page', async () => {
-        await OrderCompletedPage.pressEnlargeButton();
         expect(await OrderCompletedPage.getTextOrderConfirmation()).toEqual('<h3 class="sapMTitle sapMTitleStyleH3">Thank you for your order!</h3><p><strong>Your order number: 20171941</strong></p><p>You will receive an e-mail confirmation shortly.</p><p>When the shipment is ready, you will also get an e-mail notification.</p><p>Want to stay informed?</p><p>Please subscribe to our monthly newsletter. Send a mail to <em><a href="#" class="sapMLnk">newsletter@openui5isgreat.corp</a></em>.</p>');
     })
 
