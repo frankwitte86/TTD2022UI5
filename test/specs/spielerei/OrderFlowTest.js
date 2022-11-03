@@ -52,7 +52,6 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
         expect(await ProductPage.getSrcProductImage()).toEqual("./localService/mockdata/images/HT-2001.jpg");
     })
 
-
     it('Verify the image pop up', async () => {
         await ProductPage.pressProductImage();
         expect(await ProductPage.getImageSrcLargePopUpImage()).toEqual("./localService/mockdata/images/HT-2001.jpg");
@@ -67,14 +66,12 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
         await ProductPage.pressAddToShoppingCartButton();
     })
 
-
     it('Open the Shopping Cart', async () => {
         expect(await MainPage.getSrcShoppingCartIcon()).toEqual("sap-icon://cart");
         expect(await MainPage.getBlockedShoppingCartIcon()).toBeFalsy();
         expect(await MainPage.getVisibleShoppingCartIcon()).toBeTruthy();
         await MainPage.pressShoppingCartIcon();
     })
-
 
     it('Verify the content of the Shopping Cart', async () => {
         await ShoppingCartPage.pressEnlargeArrowIconSelector();
@@ -112,20 +109,10 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
     it('Verify and Proceed Checkout Page - Items', async () => {
         expect(await CheckOutPageItems.getCheckOutPageTitle()).toEqual("Checkout");
         expect(await CheckOutPageItems.getStepCountCheckoutFlow()).toEqual(2);
-
-        //To Do: invest how to assert a List
-        //expect(await CheckOutPageItems.getStepTilesCheckoutFlow()).toEqual(`["Items", "Payment Type"]`);
-        //expect(await CheckOutPageItems.getStepIconsCheckoutFlow()).toEqual("sap-icon://cart", "sap-icon://money-bills");
-        //expect(await CheckOutPageItems.getTextCheckOutTitleItemsSelector()).toEqual("Items");
-        //expect(await CheckOutPageItems.getIconCheckOutTitleItemsSelector()).toEqual("sap-icon://cart");
-
         expect(await CheckOutPageItems.getTextCheckOutPortableDVD()).toEqual('10" Portable DVD player');
         expect(await CheckOutPageItems.getNumberCheckOutPortableDVD()).toEqual("449,99");
         expect(await CheckOutPageItems.getUnitCheckOutPortableDVD()).toEqual("EUR");
-        //expect(await CheckOutPageItems.getIntroCheckOutPortableDVD()).toEqual("1 x");
         expect(await CheckOutPageItems.getSrcImageCheckOutPortableDVD()).toEqual("./localService/mockdata/images/HT-2001.jpg");
-        // expect(await CheckOutPageItems.getTextStatusCheckOutPortableDVD()).toEqual("Available");
-        // expect(await CheckOutPageItems.getStateStatusCheckOutPortableDVD()).toEqual("Success");
         expect(await CheckOutPageItems.getTextGrandTotal()).toEqual("Total: 449,99 EUR");
         expect(await CheckOutPageItems.getTextNextStepButton()).toEqual("Step 2");
         expect(await CheckOutPageItems.getEnabledNextStepButton()).toBeTruthy();
@@ -133,8 +120,6 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
     })
 
     it('Verify and Proceed Checkout Page - PaymentType', async () => {
-        // await browser.pause(5000)
-        //expect(await CheckOutPagePaymentType.getCheckOutPageTitle()).toEqual("Checkout");
         expect(await CheckOutPagePaymentType.getTextCheckOutPagePayment()).toEqual("We accept all major credit cards with no additional charging. Bank transfer and cash on delivery are only possible for inland deliveries. For those, we will charge additional 2.99 EUR. Orders payed with bank transfer, will be shipped direcly after the payment is received.")
         expect(await CheckOutPagePaymentType.getTextBankTransferButton()).toEqual("Bank Transfer")
         await CheckOutPagePaymentType.pressBankTransferButton();
@@ -144,8 +129,6 @@ describe('Shopping Cart - Lot of UI5 checks test', () => {
         await CheckOutPagePaymentType.pressCreditCardButton();
         expect(await CheckOutPagePaymentType.getTextNextButton()).toEqual("Step 3")
         await CheckOutPagePaymentType.pressNextButton();
-
-
     })
 
     it('Verify and Proceed Checkout Page - Credit Card Details', async () => {

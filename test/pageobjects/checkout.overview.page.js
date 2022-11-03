@@ -93,10 +93,6 @@ class CheckOutPageOverview extends Page {
         return await browser.asControl(this.deliveryTextSelector).getText();
     }
 
-
-
-
-
     open() {
         return super.open('index.html');
     }

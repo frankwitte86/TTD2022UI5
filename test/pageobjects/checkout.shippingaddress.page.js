@@ -100,15 +100,6 @@ class CheckOutPageShippingAddress extends Page {
 
     }
 
-
-
-
-
-
-
-
-
-
     open() {
         return super.open('index.html');
     }
