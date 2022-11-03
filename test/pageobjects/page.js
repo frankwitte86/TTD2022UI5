@@ -10,9 +10,6 @@ module.exports = class Page {
     * 
     */
 
-
-
-
     open(path) {
         return browser.url(`https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/${path}`)
     }

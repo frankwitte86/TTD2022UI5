@@ -13,16 +13,15 @@ class CheckOutPagePaymentType extends Page {
 
 
     get checkOutPageTitleSelector() {
-        const getCheckOutPageTitleSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--paymentTypeStep"
             }
         }
-        return getCheckOutPageTitleSelector
     }
 
     get textCheckOutPageSelector() {
-        const textCheckOutPageSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Text",
                 viewId: "container-cart---checkoutView",
@@ -32,38 +31,34 @@ class CheckOutPagePaymentType extends Page {
                 }
             }
         }
-        return textCheckOutPageSelector
     }
 
     get creditCardButtonSelector() {
-        const creditCardButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--payViaCC-button"
             }
         }
-        return creditCardButtonSelector
     }
 
     get bankTransferButtonSelector() {
-        const bankTransferButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--payViaBank-button"
             }
         }
-        return bankTransferButtonSelector
     }
 
     get cashOnDeliveryButtonSelector() {
-        const cashOnDeliveryButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--payViaCOD-button"
             }
         }
-        return cashOnDeliveryButtonSelector
     }
 
     get nextButtonSelector() {
-        const nextButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--paymentTypeStep-nextButton",
                 interaction: {
@@ -71,61 +66,51 @@ class CheckOutPagePaymentType extends Page {
                 }
             }
         }
-        return nextButtonSelector
     }
 
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async getCheckOutPageTitle() {
-        const textCheckOutTitle = await browser.asControl(this.checkOutPageTitleSelector).getTitle();
-        return await textCheckOutTitle;
+        return await browser.asControl(this.checkOutPageTitleSelector).getTitle();
     }
 
     async getTextCheckOutPagePayment() {
-        const textCheckOutPayment = await browser.asControl(this.textCheckOutPageSelector).getText();
-        return await textCheckOutPayment;
+        return await browser.asControl(this.textCheckOutPageSelector).getText();
     }
 
     async getTextCreditCardButton() {
-        const textCreditCard = await browser.asControl(this.creditCardButtonSelector).getText();
-        return await textCreditCard;
+        return await browser.asControl(this.creditCardButtonSelector).getText();
     }
 
     async getTextBankTransferButton() {
-        const textBankTransfer = await browser.asControl(this.bankTransferButtonSelector).getText();
-        return await textBankTransfer;
+        return await browser.asControl(this.bankTransferButtonSelector).getText();
     }
 
     async getTextCashOnDeliveryButton() {
-        const textCash = await browser.asControl(this.cashOnDeliveryButtonSelector).getText();
-        return await textCash;
+        return await browser.asControl(this.cashOnDeliveryButtonSelector).getText();
     }
 
     async pressCreditCardButton() {
         await browser.asControl(this.creditCardButtonSelector).press();
-
     }
 
     async pressBankTransferButton() {
         await browser.asControl(this.bankTransferButtonSelector).press();
-
     }
 
     async pressCashOnDeliveryButton() {
         await browser.asControl(this.cashOnDeliveryButtonSelector).press();
-
     }
 
     async getTextNextButton() {
-        const textNetButton = await browser.asControl(this.nextButtonSelector).getText();
-        return await textNetButton;
+        return await browser.asControl(this.nextButtonSelector).getText();
     }
 
     async pressNextButton() {
         await browser.asControl(this.nextButtonSelector).firePress();
     }
-
-
-
 
     open() {
         return super.open('index.html');

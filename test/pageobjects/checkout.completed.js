@@ -12,7 +12,7 @@ class OrderCompletedPage extends Page {
     // /**
 
     get orderConfirmationTextSelector() {
-        const orderConfirmationTextSelector = {
+        return {
             selector: {
                 controlType: "sap.m.FormattedText",
                 viewId: "container-cart---orderCompletedView",
@@ -21,11 +21,10 @@ class OrderCompletedPage extends Page {
                 }
             }
         }
-        return orderConfirmationTextSelector
     }
 
     get returnToShopButtonSelector() {
-        const returnToShopButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---orderCompletedView--returnToShopButton",
                 interaction: {
@@ -33,23 +32,19 @@ class OrderCompletedPage extends Page {
                 }
             }
         }
-        return returnToShopButtonSelector
     }
 
-     async getTextOrderConfirmation() {
-        const textOrderCormfirmation = await browser.asControl(this.orderConfirmationTextSelector).getHtmlText();
-        return await textOrderCormfirmation;
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
+
+    async getTextOrderConfirmation() {
+        return await browser.asControl(this.orderConfirmationTextSelector).getHtmlText();
     }
 
     async pressReturnToShopButton() {
         await browser.asControl(this.returnToShopButtonSelector).firePress();
     }
-
-
-
-
-
-
 
     open() {
         return super.open('index.html');

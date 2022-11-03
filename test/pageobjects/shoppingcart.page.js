@@ -12,7 +12,7 @@ class ShoppingCartPage extends Page {
     // /**
 
     get proceedButtonSelector() {
-        const proceedButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---cartView--proceedButton",
                 interaction: {
@@ -20,29 +20,26 @@ class ShoppingCartPage extends Page {
                 }
             }
         }
-        return proceedButtonSelector
     }
 
     get enlargeArrowIconSelector() {
-        const enlargeArrowIconSelector = {
+        return {
             selector: {
                 id: "container-cart---app--layout-midBack-img"
             }
         }
-        return enlargeArrowIconSelector
     }
 
     get titleShoppingCartSelector() {
-        const titleShoppingCartSelector = {
+        return {
             selector: {
                 id: "container-cart---cartView--page-title"
             }
         }
-        return titleShoppingCartSelector
     }
 
     get titleItemsInShoppingCartSelector() {
-        const titleItemsInShoppingCartSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Title",
                 viewId: "container-cart---cartView",
@@ -52,11 +49,10 @@ class ShoppingCartPage extends Page {
                 }
             }
         }
-        return titleItemsInShoppingCartSelector
     }
 
     get portableDVDInShoppingCartSelector() {
-        const portableDVDInShoppingCartSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectListItem",
                 viewId: "container-cart---cartView",
@@ -67,11 +63,10 @@ class ShoppingCartPage extends Page {
                 }
             }
         }
-        return portableDVDInShoppingCartSelector
     }
 
     get statusPortableDVDShoppingCartSelector() {
-        const statusPortableDVDShoppingCartSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectStatus",
                 viewId: "container-cart---cartView",
@@ -85,20 +80,18 @@ class ShoppingCartPage extends Page {
                 }
             }
         }
-        return statusPortableDVDShoppingCartSelector
     }
 
     get totalPriceShoppingCartSelector() {
-        const totalPriceShoppingCartSelector = {
+        return {
             selector: {
                 id: "container-cart---cartView--totalPriceText"
             }
         }
-        return totalPriceShoppingCartSelector
     }
 
     get saveForLaterLinkSelector() {
-        const saveForLaterLinkSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectAttribute",
                 viewId: "container-cart---cartView",
@@ -111,11 +104,10 @@ class ShoppingCartPage extends Page {
                 }
             }
         }
-        return saveForLaterLinkSelector
     }
 
     get itemsSavedForLaterContentSelector() {
-        const itemsSavedForLaterContentSelector = {
+        return {
             selector: {
                 id: "container-cart---cartView--saveForLaterList",
                 interaction: {
@@ -123,11 +115,10 @@ class ShoppingCartPage extends Page {
                 }
             }
         }
-        return itemsSavedForLaterContentSelector
     }
 
     get addToShoppingCartLinkSelector() {
-        const addToShoppingCartSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectAttribute",
                 viewId: "container-cart---cartView",
@@ -140,8 +131,11 @@ class ShoppingCartPage extends Page {
                 }
             }
         }
-        return addToShoppingCartSelector
     }
+
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async pressProceedButtonShoppingCart() {
         await browser.asControl(this.proceedButtonSelector).firePress();
@@ -152,73 +146,60 @@ class ShoppingCartPage extends Page {
     }
 
     async getTextTitleShoppingCart() {
-        const textTitleShoppingCart = await browser.asControl(this.titleShoppingCartSelector).getText();
-        return await textTitleShoppingCart;
+        return await browser.asControl(this.titleShoppingCartSelector).getText();
     }
 
     async getTextTitleItemsInShoppingCart() {
-        const textTitleItemsInShoppingCart = await browser.asControl(this.titleItemsInShoppingCartSelector).getText();
-        return await textTitleItemsInShoppingCart;
+        return await browser.asControl(this.titleItemsInShoppingCartSelector).getText();
     }
 
     async getTitlePortableDVDInShoppingCart() {
-        const titleportableDVDInShoppingCart = await browser.asControl(this.portableDVDInShoppingCartSelector).getTitle();
-        return await titleportableDVDInShoppingCart;
+        return await browser.asControl(this.portableDVDInShoppingCartSelector).getTitle();
     }
 
     async getNumberPortableDVDInShoppingCart() {
-        const numberPortableDVDInShoppingCart = await browser.asControl(this.portableDVDInShoppingCartSelector).getNumber();
-        return await numberPortableDVDInShoppingCart;
+        return await browser.asControl(this.portableDVDInShoppingCartSelector).getNumber();
     }
 
     async getNumberUnitPortableDVDInShoppingCart() {
-        const numberUnitPortableDVDInShoppingCart = await browser.asControl(this.portableDVDInShoppingCartSelector).getNumberUnit();
-        return await numberUnitPortableDVDInShoppingCart;
+        return await browser.asControl(this.portableDVDInShoppingCartSelector).getNumberUnit();
     }
 
     async getIntroPortableDVDInShoppingCart() {
-        const introPortableDVDInShoppingCart = await browser.asControl(this.portableDVDInShoppingCartSelector).getIntro();
-        return await introPortableDVDInShoppingCart;
+        return await browser.asControl(this.portableDVDInShoppingCartSelector).getIntro();
+
     }
 
     async getIconPortableDVDInShoppingCart() {
-        const iconPortableDVDInShoppingCart = await browser.asControl(this.portableDVDInShoppingCartSelector).getIcon();
-        return await iconPortableDVDInShoppingCart;
+        return await browser.asControl(this.portableDVDInShoppingCartSelector).getIcon();
     }
 
     async getTextStatusPortableDVDInShoppingCart() {
-        const textStatusPortableDVDShoppingCart = await browser.asControl(this.statusPortableDVDShoppingCartSelector).getText();
-        return await textStatusPortableDVDShoppingCart;
+        return await browser.asControl(this.statusPortableDVDShoppingCartSelector).getText();
     }
 
     async getStateStatusPortableDVDInShoppingCart() {
-        const stateStatusPortableDVDShoppingCart = await browser.asControl(this.statusPortableDVDShoppingCartSelector).getState();
-        return await stateStatusPortableDVDShoppingCart;
+        return await browser.asControl(this.statusPortableDVDShoppingCartSelector).getState();
     }
 
     async getTextTotalPriceShoppingCart() {
-        const textTotalPriceShoppingCart = await browser.asControl(this.totalPriceShoppingCartSelector).getText();
-        return await textTotalPriceShoppingCart;
+        return await browser.asControl(this.totalPriceShoppingCartSelector).getText();
     }
 
     async getTextSaveForLaterLink() {
-        const textsaveForLaterLink = await browser.asControl(this.saveForLaterLinkSelector).getText();
-        return await textsaveForLaterLink;
+        return await browser.asControl(this.saveForLaterLinkSelector).getText();
     }
 
     async getActiveSaveForLaterLink() {
-        const activeSaveForLaterLink = await browser.asControl(this.saveForLaterLinkSelector).getActive();
-        return await activeSaveForLaterLink;
+        return await browser.asControl(this.saveForLaterLinkSelector).getActive();
     }
 
     async getVisibleSaveForLaterLink() {
-        const visibleSaveForLaterLink = await browser.asControl(this.saveForLaterLinkSelector).getVisible();
-        return await visibleSaveForLaterLink;
+        return await browser.asControl(this.saveForLaterLinkSelector).getVisible();
     }
 
     async getBlockedSaveForLaterLink() {
-        const blockedSaveForLaterLink = await browser.asControl(this.saveForLaterLinkSelector).getBlocked();
-        return await blockedSaveForLaterLink;
+        return await browser.asControl(this.saveForLaterLinkSelector).getBlocked();
     }
 
     async pressSaveForLaterLink() {
@@ -226,36 +207,28 @@ class ShoppingCartPage extends Page {
     }
 
     async getNoDataTextItemsSavedForLater() {
-        const noDataTextItemsSavedForLater = await browser.asControl(this.itemsSavedForLaterContentSelector).getNoDataText();
-        return await noDataTextItemsSavedForLater
+        return await browser.asControl(this.itemsSavedForLaterContentSelector).getNoDataText();
     }
 
     async getShowNoDataItemsSavedForLater() {
-        const showNoDataTextItemsSavedForLater = await browser.asControl(this.itemsSavedForLaterContentSelector).getShowNoData();
-        return await showNoDataTextItemsSavedForLater
+        return await browser.asControl(this.itemsSavedForLaterContentSelector).getShowNoData();
     }
 
     async getTextAddToShoppingCartLink() {
-        const textAddToShoppingCartLink = await browser.asControl(this.addToShoppingCartLinkSelector).getText();
-        return await textAddToShoppingCartLink
+        return await browser.asControl(this.addToShoppingCartLinkSelector).getText();
     }
 
     async getActiveAddToShoppingCartLink() {
-        const activeAddToShoppingCartLink = await browser.asControl(this.addToShoppingCartLinkSelector).getActive();
-        return await activeAddToShoppingCartLink
+        return await browser.asControl(this.addToShoppingCartLinkSelector).getActive();
     }
 
     async getVisibleAddToShoppingCartLink() {
-        const visibleAddToShoppingCartLink = await browser.asControl(this.addToShoppingCartLinkSelector).getVisible();
-        return await visibleAddToShoppingCartLink
+        return await browser.asControl(this.addToShoppingCartLinkSelector).getVisible();
     }
 
     async pressAddToShoppingCartLink() {
         await browser.asControl(this.addToShoppingCartLinkSelector).firePress();
     }
-
-
-
     open() {
         return super.open('index.html');
     }

@@ -11,9 +11,8 @@ class CheckOutPageBankTransfer extends Page {
      */
     // /**
 
-
     get nextStepButtonSelector() {
-        const nextStepButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--bankAccountStep-nextButton",
                 interaction: {
@@ -21,8 +20,11 @@ class CheckOutPageBankTransfer extends Page {
                 }
             }
         }
-        return nextStepButtonSelector
     }
+
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async pressNextStepButton() {
         await browser.asControl(this.nextStepButtonSelector).firePress()

@@ -12,7 +12,7 @@ class CategoryPage extends Page {
     // /**
 
     get portableDVDSelector() {
-        const portableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectListItem",
                 viewId: "container-cart---category",
@@ -23,11 +23,10 @@ class CategoryPage extends Page {
             }
 
         }
-        return portableDVDSelector
     }
 
     get statusPortableDVDSelector() {
-        const statusPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectStatus",
                 viewId: "container-cart---category",
@@ -40,11 +39,10 @@ class CategoryPage extends Page {
                 }
             }
         }
-        return statusPortableDVDSelector
     }
 
     get compareLinkPortableDVDSelector() {
-        const compareLinkPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectAttribute",
                 viewId: "container-cart---category",
@@ -68,34 +66,26 @@ class CategoryPage extends Page {
                 }
             }
         }
-        return compareLinkPortableDVDSelector
     }
-
-
-
 
     //  * a method to encapsule automation code to interact with the page
     //  * e.g. to login using username and password
     //  */
 
     async getTitlePortableDVD() {
-        const portableDvdTitle = await browser.asControl(this.portableDVDSelector).getTitle();
-        return await portableDvdTitle;
+        return await browser.asControl(this.portableDVDSelector).getTitle();
     }
 
     async getnumberPortableDVD() {
-        const portableDvdNumber = await browser.asControl(this.portableDVDSelector).getNumber();
-        return await portableDvdNumber;
+        return await browser.asControl(this.portableDVDSelector).getNumber();
     }
 
     async getnumberUnitPortableDVD() {
-        const portableDvdNumberUnit = await browser.asControl(this.portableDVDSelector).getNumberUnit();
-        return await portableDvdNumberUnit;
+        return await browser.asControl(this.portableDVDSelector).getNumberUnit();
     }
 
     async getIconPortableDVD() {
-        const portableDvdIcon = await browser.asControl(this.portableDVDSelector).getIcon();
-        return await portableDvdIcon;
+        return await browser.asControl(this.portableDVDSelector).getIcon();
     }
 
     async pressPortableDVD() {
@@ -103,30 +93,20 @@ class CategoryPage extends Page {
     }
 
     async getTextStatePortableDVD() {
-        const stateTextPortableDVD = await browser.asControl(this.statusPortableDVDSelector).getText();
-        return await stateTextPortableDVD;
+        return await browser.asControl(this.statusPortableDVDSelector).getText();
     }
 
     async getStatePortableDVD() {
-        const statePortableDVD = await browser.asControl(this.statusPortableDVDSelector).getState();
-        return await statePortableDVD;
+        return await browser.asControl(this.statusPortableDVDSelector).getState();
     }
 
     async getTextCompareLinkPortableDVD() {
-        const compareLinkPortableDVD = await browser.asControl(this.compareLinkPortableDVDSelector).getText();
-        return await compareLinkPortableDVD;
+        return await browser.asControl(this.compareLinkPortableDVDSelector).getText();
     }
 
     async getActiveTextCompareLinkPortableDVD() {
-        const compareLinkActivePortableDVD = await browser.asControl(this.compareLinkPortableDVDSelector).getActive();
-        return await compareLinkActivePortableDVD;
+        return await browser.asControl(this.compareLinkPortableDVDSelector).getActive();
     }
-
-    // async getTextCompareLinkPortableDVD() {
-    //     const compareLinkPortableDVD = await browser.asControl(this.compareLinkPortableDVDSelector).getText();
-    //     return await compareLinkPortableDVD;
-    // }
-
 
     open() {
         return super.open('index.html');

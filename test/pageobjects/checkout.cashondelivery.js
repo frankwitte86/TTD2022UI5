@@ -11,9 +11,8 @@ class CheckOutCashOnDelivery extends Page {
      */
     // /**
 
-
     get inputFirstNameSelector() {
-        const inputFirstNameSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--cashOnDeliveryName",
                 interaction: {
@@ -21,11 +20,10 @@ class CheckOutCashOnDelivery extends Page {
                 }
             }
         }
-        return inputFirstNameSelector
     }
 
     get inputLastNameSelector() {
-        const inputLastNameSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--cashOnDeliveryLastName",
                 interaction: {
@@ -33,11 +31,10 @@ class CheckOutCashOnDelivery extends Page {
                 }
             }
         }
-        return inputLastNameSelector
     }
 
     get inputPhoneNumberSelector() {
-        const inputPhoneNumberSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--cashOnDeliveryPhoneNumber",
                 interaction: {
@@ -45,11 +42,10 @@ class CheckOutCashOnDelivery extends Page {
                 }
             }
         }
-        return inputPhoneNumberSelector
     }
 
     get inputEmailAdressSelector() {
-        const inputEmailAdressSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--cashOnDeliveryEmail",
                 interaction: {
@@ -57,11 +53,10 @@ class CheckOutCashOnDelivery extends Page {
                 }
             }
         }
-        return inputEmailAdressSelector
     }
 
     get nextStepButtonSelector() {
-        const nextStepButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--cashOnDeliveryStep-nextButton",
                 interaction: {
@@ -69,8 +64,11 @@ class CheckOutCashOnDelivery extends Page {
                 }
             }
         }
-        return nextStepButtonSelector
     }
+
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async pressNextStepButton() {
         await browser.asControl(this.nextStepButtonSelector).firePress()
@@ -82,7 +80,6 @@ class CheckOutCashOnDelivery extends Page {
         await browser.asControl(this.inputPhoneNumberSelector).enterText(phonenumber);
         await browser.asControl(this.inputEmailAdressSelector).enterText(email);
     }
-
 
     open() {
         return super.open('index.html');

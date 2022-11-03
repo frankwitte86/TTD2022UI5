@@ -11,7 +11,7 @@ class CheckOutPageDeliveryType extends Page {
      */
     // /**
     get standardDeliveryButtonSelector() {
-        const standardDeliveryButtonSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Button",
                 viewId: "container-cart---checkoutView",
@@ -20,20 +20,18 @@ class CheckOutPageDeliveryType extends Page {
                 }
             }
         }
-        return standardDeliveryButtonSelector
     }
 
     get expressDeliveryButtonSelector() {
-        const expressDeliveryButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--expressDelivery-button"
             }
         }
-        return expressDeliveryButtonSelector
     }
 
     get nextStepButtonSelector() {
-        const nextStepButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--deliveryTypeStep-nextButton",
                 interaction: {
@@ -41,12 +39,10 @@ class CheckOutPageDeliveryType extends Page {
                 }
             }
         }
-        return nextStepButtonSelector
     }
 
-
     get deliveryTextSelector() {
-        const deliveryTextSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Text",
                 viewId: "container-cart---checkoutView",
@@ -56,8 +52,11 @@ class CheckOutPageDeliveryType extends Page {
                 }
             }
         }
-        return deliveryTextSelector
     }
+
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async pressStandardDeliveryButton() {
         await browser.asControl(this.standardDeliveryButtonSelector).press();
@@ -72,8 +71,7 @@ class CheckOutPageDeliveryType extends Page {
     }
 
     async getTextDeliveryTypes() {
-        const textDeliveryTypes = await browser.asControl(this.deliveryTextSelector).getText();
-        return await textDeliveryTypes;
+        return await browser.asControl(this.deliveryTextSelector).getText();
     }
 
 

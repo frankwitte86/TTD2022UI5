@@ -47,7 +47,7 @@ class CheckOutPageInvoiceAdress extends Page {
     }
 
     get inputCountrySelector() {
-        const inputCountrySelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--invoiceAddressCountry",
                 interaction: {
@@ -55,11 +55,10 @@ class CheckOutPageInvoiceAdress extends Page {
                 }
             }
         }
-        return inputCountrySelector
     }
 
     get inputNoteSelector() {
-        const inputNoteSelector = {
+        return {
             selector: {
                 controlType: "sap.m.TextArea",
                 viewId: "container-cart---checkoutView",
@@ -71,11 +70,10 @@ class CheckOutPageInvoiceAdress extends Page {
                 }
             }
         }
-        return inputNoteSelector
     }
 
     get differentAddressCheckBoxSelector() {
-        const differentAddressCheckBoxSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--differentDeliveryAddress",
                 interaction: {
@@ -83,11 +81,10 @@ class CheckOutPageInvoiceAdress extends Page {
                 }
             }
         }
-        return differentAddressCheckBoxSelector
     }
 
     get nextStepButtonSelector() {
-        const nextStepButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--invoiceStep-nextButton",
                 interaction: {
@@ -95,9 +92,11 @@ class CheckOutPageInvoiceAdress extends Page {
                 }
             }
         }
-        return nextStepButtonSelector
     }
 
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async enterTextInputAddressSelector(address) {
         await browser.asControl(this.inputAddressSelector).enterText(address);
@@ -128,8 +127,7 @@ class CheckOutPageInvoiceAdress extends Page {
     }
 
     async getSelecteddifferentAddressCheckBox() {
-        const selectedCheckBox = await browser.asControl(this.differentAddressCheckBoxSelector).getSelected();
-        return await selectedCheckBox;
+        return await browser.asControl(this.differentAddressCheckBoxSelector).getSelected();
     }
 
     async enterTextInvoiceAddress(address, city, zippCode, country, note) {
@@ -139,8 +137,6 @@ class CheckOutPageInvoiceAdress extends Page {
         await browser.asControl(this.inputCountrySelector).enterText(country);
         await browser.asControl(this.inputNoteSelector).enterText(note);
     }
-
-
 
     open() {
         return super.open('index.html');

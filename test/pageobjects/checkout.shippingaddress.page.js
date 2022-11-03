@@ -13,7 +13,7 @@ class CheckOutPageShippingAddress extends Page {
 
 
     get inputDeliveryAddressSelector() {
-        const inputDeliveryAddressSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--deliveryAddressAddress",
                 interaction: {
@@ -21,11 +21,10 @@ class CheckOutPageShippingAddress extends Page {
                 }
             }
         }
-        return inputDeliveryAddressSelector
     }
 
     get inputDeliveryCitySelector() {
-        const inputDeliveryCitySelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--deliveryAddressCity",
                 interaction: {
@@ -33,11 +32,10 @@ class CheckOutPageShippingAddress extends Page {
                 }
             }
         }
-        return inputDeliveryCitySelector
     }
 
     get inputDeliveryZipCodeSelector() {
-        const inputDeliveryZipCodeSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--deliveryAddressZip",
                 interaction: {
@@ -45,11 +43,10 @@ class CheckOutPageShippingAddress extends Page {
                 }
             }
         }
-        return inputDeliveryZipCodeSelector
     }
 
     get inputDeliveryCountrySelector() {
-        const inputDeliveryCountrySelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--deliveryAddressCountry",
                 interaction: {
@@ -57,11 +54,10 @@ class CheckOutPageShippingAddress extends Page {
                 }
             }
         }
-        return inputDeliveryCountrySelector
     }
 
     get inputDeliveryNoteSelector() {
-        const inputDeliveryNoteSelector = {
+        return {
             selector: {
                 controlType: "sap.m.TextArea",
                 viewId: "container-cart---checkoutView",
@@ -74,11 +70,10 @@ class CheckOutPageShippingAddress extends Page {
                 }
             }
         }
-        return inputDeliveryNoteSelector
     }
 
     get nextStepButtonSelector() {
-        const nextStepButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--deliveryAddressStep-nextButton",
                 interaction: {
@@ -86,9 +81,11 @@ class CheckOutPageShippingAddress extends Page {
                 }
             }
         }
-        return nextStepButtonSelector
     }
 
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async enterTextShippingAddress(address, city, zipCode, country, note) {
         await browser.asControl(this.inputDeliveryAddressSelector).enterText(address);

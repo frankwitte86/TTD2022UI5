@@ -13,7 +13,7 @@ class CheckOutPageItems extends Page {
 
 
     get checkOutPageTitleSelector() {
-        const getCheckOutPageTitleSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--wizardContentPage-title",
                 interaction: {
@@ -21,20 +21,18 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return getCheckOutPageTitleSelector
     }
 
     get stepCountSelector() {
-        const stepCountSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--shoppingCartWizard-progressNavigator"
             }
         }
-        return stepCountSelector
     }
 
     get checkOutTitleItemsSelector() {
-        const checkOutTitleItemsSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--contentsStep",
                 interaction: {
@@ -42,11 +40,10 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return checkOutTitleItemsSelector
     }
 
     get textCheckOutPortableDVDSelector() {
-        const textheckOutPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Text",
                 viewId: "container-cart---checkoutView",
@@ -55,11 +52,10 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return textheckOutPortableDVDSelector
     }
 
     get priceCheckOutPortableDVDSelector() {
-        const priceCheckOutPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectNumber",
                 viewId: "container-cart---checkoutView",
@@ -71,11 +67,10 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return priceCheckOutPortableDVDSelector
     }
 
     get imageCheckOutPortableDVDSelector() {
-        const imageCheckOutPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Image",
                 viewId: "container-cart---checkoutView",
@@ -88,11 +83,10 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return imageCheckOutPortableDVDSelector
     }
 
     get grandTotalSelector() {
-        const grandTotalSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Text",
                 viewId: "container-cart---checkoutView",
@@ -103,11 +97,10 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return grandTotalSelector
     }
 
     get statusCheckOutPortableDVDSelector() {
-        const statusCheckOutPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectStatus",
                 viewId: "container-cart---checkoutView",
@@ -118,11 +111,10 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return statusCheckOutPortableDVDSelector
     }
 
     get nextStepButton() {
-        const nextStepButton = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--contentsStep-nextButton",
                 interaction: {
@@ -130,87 +122,74 @@ class CheckOutPageItems extends Page {
                 }
             }
         }
-        return nextStepButton
     }
 
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
+
     async getCheckOutPageTitle() {
-        const textCheckOutTitle = await browser.asControl(this.checkOutPageTitleSelector).getText();
-        return await textCheckOutTitle;
+        return await browser.asControl(this.checkOutPageTitleSelector).getText();
     }
 
     async getStepCountCheckoutFlow() {
-        const stepCountCheckoutFlow = await browser.asControl(this.stepCountSelector).getStepCount();
-        return await stepCountCheckoutFlow;
+        return await browser.asControl(this.stepCountSelector).getStepCount();
     }
 
     async getStepTilesCheckoutFlow() {
-        const stepTilesCheckoutFlow = await browser.asControl(this.stepCountSelector).getStepTitles();
-        return await stepTilesCheckoutFlow;
+        return await browser.asControl(this.stepCountSelector).getStepTitles();
     }
 
     async getStepIconsCheckoutFlow() {
-        const stepIconsCheckoutFlow = await browser.asControl(this.stepCountSelector).getStepIcons();
-        return await stepIconsCheckoutFlow;
+        return await browser.asControl(this.stepCountSelector).getStepIcons();
     }
 
     async getTextCheckOutTitleItemsSelector() {
-        const titleCheckOutTitleItems = await browser.asControl(this.checkOutTitleItemsSelector).getTitle();
-        return await titleCheckOutTitleItems;
+        return await browser.asControl(this.checkOutTitleItemsSelector).getTitle();
     }
 
     async getIconCheckOutTitleItemsSelector() {
-        const titleCheckOutTitleItems = await browser.asControl(this.checkOutTitleItemsSelector).getIcon();
-        return await titleCheckOutTitleItems;
+        return await browser.asControl(this.checkOutTitleItemsSelector).getIcon();
     }
 
     async getTextCheckOutPortableDVD() {
-        const textCheckOutPortableDVD = await browser.asControl(this.textCheckOutPortableDVDSelector).getText();
-        return await textCheckOutPortableDVD;
+        return await browser.asControl(this.textCheckOutPortableDVDSelector).getText();
     }
 
     async getNumberCheckOutPortableDVD() {
-        const numberCheckOutPortableDVD = await browser.asControl(this.priceCheckOutPortableDVDSelector).getNumber();
-        return await numberCheckOutPortableDVD;
+        return await browser.asControl(this.priceCheckOutPortableDVDSelector).getNumber();
     }
 
     async getUnitCheckOutPortableDVD() {
-        const unitCheckOutPortableDVD = await browser.asControl(this.priceCheckOutPortableDVDSelector).getUnit();
-        return await unitCheckOutPortableDVD;
+        return await browser.asControl(this.priceCheckOutPortableDVDSelector).getUnit();
     }
 
     async getSrcImageCheckOutPortableDVD() {
-        const srcImageCheckOutPortableDVD = await browser.asControl(this.imageCheckOutPortableDVDSelector).getSrc();
-        return await srcImageCheckOutPortableDVD;
+        return await browser.asControl(this.imageCheckOutPortableDVDSelector).getSrc();
     }
 
     async getTextGrandTotal() {
-        const textGrandTotalSelector = await browser.asControl(this.grandTotalSelector).getText();
-        return await textGrandTotalSelector;
+        return await browser.asControl(this.grandTotalSelector).getText();
     }
 
     async getTextStatusCheckOutPortableDVD() {
-        const textStatusCheckOutPortableDVD = await browser.asControl(this.statusCheckOutPortableDVDSelector).getText();
-        return await textStatusCheckOutPortableDVD;
+        return await browser.asControl(this.statusCheckOutPortableDVDSelector).getText();
     }
 
     async getStateStatusCheckOutPortableDVD() {
-        const stateStatusCheckOutPortableDVD = await browser.asControl(this.statusCheckOutPortableDVDSelector).getState();
-        return await stateStatusCheckOutPortableDVD;
+        return await browser.asControl(this.statusCheckOutPortableDVDSelector).getState();
     }
 
     async getTextNextStepButton() {
-        const textNextStepButton = await browser.asControl(this.nextStepButton).getText();
-        return await textNextStepButton;
+        return await browser.asControl(this.nextStepButton).getText();
     }
 
     async getEnabledNextStepButton() {
-        const enabledNextStepButton = await browser.asControl(this.nextStepButton).getEnabled();
-        return await enabledNextStepButton;
+        return await browser.asControl(this.nextStepButton).getEnabled();
     }
 
     async pressNextStepButton() {
         await browser.asControl(this.nextStepButton).press();
-
     }
 
     open() {

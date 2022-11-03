@@ -12,7 +12,7 @@ class CheckOutPageOverview extends Page {
     // /**
 
     get confirmButtonSelector() {
-        const confirmButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--submitOrder",
                 interaction: {
@@ -20,11 +20,10 @@ class CheckOutPageOverview extends Page {
                 }
             }
         }
-        return confirmButtonSelector
     }
 
     get cancelButtonSelector() {
-        const cancelButtonSelector = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--cancelOrder",
                 interaction: {
@@ -32,11 +31,10 @@ class CheckOutPageOverview extends Page {
                 }
             }
         }
-        return cancelButtonSelector
     }
 
     get confirmationButtonPopUpSelector() {
-        const confirmationButtonPopUpSelector = {
+        return {
 
             selector: {
                 controlType: "sap.m.Button",
@@ -46,11 +44,10 @@ class CheckOutPageOverview extends Page {
                 searchOpenDialogs: true
             }
         }
-        return confirmationButtonPopUpSelector
     }
 
     get confirmationButtonCancelPopUpSelector() {
-        const confirmationButtonCancelPopUpSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Button",
                 properties: {
@@ -62,11 +59,11 @@ class CheckOutPageOverview extends Page {
                 }
             }
         }
-        return confirmationButtonCancelPopUpSelector
     }
 
-
-
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async pressconfirmButton() {
         await browser.asControl(this.confirmButtonSelector).firePress();
@@ -93,8 +90,7 @@ class CheckOutPageOverview extends Page {
     }
 
     async getTextDeliveryTypes() {
-        const textDeliveryTypes = await browser.asControl(this.deliveryTextSelector).getText();
-        return await textDeliveryTypes;
+        return await browser.asControl(this.deliveryTextSelector).getText();
     }
 
 

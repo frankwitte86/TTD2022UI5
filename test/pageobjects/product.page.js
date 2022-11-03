@@ -12,7 +12,7 @@ class ProductPage extends Page {
     // /**
 
     get productHeaderTitleSelector() {
-        const productHeaderTitleSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Title",
                 viewId: "container-cart---product",
@@ -25,11 +25,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productHeaderTitleSelector
     }
 
     get productDetailsPortableDVDSelector() {
-        const productDetailsPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectHeader",
                 viewId: "container-cart---product",
@@ -39,11 +38,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productDetailsPortableDVDSelector
     }
 
     get productDetailPortableDVDStatusSelector() {
-        const productDetailPortableDVDStatusSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectStatus",
                 viewId: "container-cart---product",
@@ -56,11 +54,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productDetailPortableDVDStatusSelector
     }
 
     get productSupplierPortableDVDSelector() {
-        const productSupplierPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectAttribute",
                 viewId: "container-cart---product",
@@ -70,11 +67,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productSupplierPortableDVDSelector
     }
 
     get productDescriptionPortableDVDSelector() {
-        const productDescriptionPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectAttribute",
                 viewId: "container-cart---product",
@@ -84,11 +80,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productDescriptionPortableDVDSelector
     }
 
     get productWeightPortableDVDSelector() {
-        const productWeightPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectAttribute",
                 viewId: "container-cart---product",
@@ -98,11 +93,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productWeightPortableDVDSelector
     }
 
     get productMeasuresPortableDVDSelector() {
-        const productMeasuresPortableDVDSelector = {
+        return {
             selector: {
                 controlType: "sap.m.ObjectAttribute",
                 viewId: "container-cart---product",
@@ -112,11 +106,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productMeasuresPortableDVDSelector
     }
 
     get productImageSelector() {
-        const productImageSelector = {
+        return {
             selector: {
                 id: "container-cart---product--productImage",
                 interaction: {
@@ -124,11 +117,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return productImageSelector
     }
 
     get popUpCloseButtonSelector() {
-        const popUpCloseButton = {
+        return {
             selector: {
                 id: "container-cart---product--lightBox-closeButton",
                 searchOpenDialogs: true,
@@ -137,11 +129,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return popUpCloseButton
     }
 
     get addToShoppingCartButtonSelector() {
-        const addToShoppingCartButtonSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Button",
                 viewId: "container-cart---product",
@@ -154,11 +145,10 @@ class ProductPage extends Page {
                 }
             }
         }
-        return addToShoppingCartButtonSelector
     }
 
     get largePopUpImageSelector() {
-        const largePopUpImageSelector = {
+        return {
             selector: {
                 controlType: "sap.m.LightBoxItem",
                 viewId: "container-cart---product",
@@ -169,11 +159,10 @@ class ProductPage extends Page {
                 searchOpenDialogs: true
             }
         }
-        return largePopUpImageSelector
     }
 
     get textTitleShoppingCartSelector() {
-        const titleShoppingCartSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Title",
                 viewId: "container-cart---cartView",
@@ -186,82 +175,70 @@ class ProductPage extends Page {
                 }
             }
         }
-        return titleShoppingCartSelector
     }
 
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
+
     async getTextProductHeaderTitle() {
-        const testProductHeaderTitle = await browser.asControl(this.productHeaderTitleSelector).getText();
-        return await testProductHeaderTitle;
+        return await browser.asControl(this.productHeaderTitleSelector).getText();
     }
 
     async getTitleProductDetailsPortableDVDSelector() {
-        const productDetailsPortableDVDTitle = await browser.asControl(this.productDetailsPortableDVDSelector).getTitle();
-        return await productDetailsPortableDVDTitle;
+        return await browser.asControl(this.productDetailsPortableDVDSelector).getTitle();
     }
 
     async getNumberProductDetailsPortableDVDSelector() {
-        const productDetailsPortableDVDNumber = await browser.asControl(this.productDetailsPortableDVDSelector).getNumber();
-        return await productDetailsPortableDVDNumber;
+        return await browser.asControl(this.productDetailsPortableDVDSelector).getNumber();
     }
 
     async getNumberUnitProductDetailsPortableDVDSelector() {
-        const productDetailsPortableDVDNumberUnit = await browser.asControl(this.productDetailsPortableDVDSelector).getNumberUnit();
-        return await productDetailsPortableDVDNumberUnit;
+        return await browser.asControl(this.productDetailsPortableDVDSelector).getNumberUnit();
     }
 
     async getTextProductDetailPortableDVDStatusSelector() {
-        const productDetailPortableDVDStatusSelector = await browser.asControl(this.productDetailPortableDVDStatusSelector).getText();
-        return await productDetailPortableDVDStatusSelector;
+        return await browser.asControl(this.productDetailPortableDVDStatusSelector).getText();
     }
 
     async getStateProductDetailPortableDVDStatusSelector() {
-        const productDetailPortableDVDStatusSelector = await browser.asControl(this.productDetailPortableDVDStatusSelector).getState();
-        return await productDetailPortableDVDStatusSelector;
+        return await browser.asControl(this.productDetailPortableDVDStatusSelector).getState();
     }
 
     async getTitlePortableDVDSupplier() {
-        const titlePortableDVDSupplier = await browser.asControl(this.productSupplierPortableDVDSelector).getTitle();
-        return await titlePortableDVDSupplier;
+        return await browser.asControl(this.productSupplierPortableDVDSelector).getTitle();
     }
 
     async getTextPortableDVDSupplier() {
-        const textPortableDVDSupplier = await browser.asControl(this.productSupplierPortableDVDSelector).getText();
-        return await textPortableDVDSupplier;
+        return await browser.asControl(this.productSupplierPortableDVDSelector).getText();
     }
 
     async getTitlePortableDVDDescription() {
-        const titlePortableDVDDescription = await browser.asControl(this.productDescriptionPortableDVDSelector).getTitle();
-        return await titlePortableDVDDescription;
+        return await browser.asControl(this.productDescriptionPortableDVDSelector).getTitle();
     }
 
     async getTextPortableDVDDescription() {
-        const textPortableDVDDescription = await browser.asControl(this.productDescriptionPortableDVDSelector).getText();
-        return await textPortableDVDDescription;
+        return await browser.asControl(this.productDescriptionPortableDVDSelector).getText();
     }
 
     async getTitlePortableDVDWeight() {
-        const titlePortableDVDWeight = await browser.asControl(this.productWeightPortableDVDSelector).getTitle();
-        return await titlePortableDVDWeight;
+        return await browser.asControl(this.productWeightPortableDVDSelector).getTitle();
     }
 
     async getTextPortableDVDWeight() {
-        const textPortableDVDWeight = await browser.asControl(this.productWeightPortableDVDSelector).getText();
-        return await textPortableDVDWeight;
+        return await browser.asControl(this.productWeightPortableDVDSelector).getText();
     }
 
     async getTitlePortableDVDWMeasures() {
-        const titlePortableDVDMeasures = await browser.asControl(this.productMeasuresPortableDVDSelector).getTitle();
-        return await titlePortableDVDMeasures;
+        return await browser.asControl(this.productMeasuresPortableDVDSelector).getTitle();
     }
 
     async getTextPortableDVDMeasures() {
-        const textPortableDVDMeasures = await browser.asControl(this.productMeasuresPortableDVDSelector).getText();
-        return await textPortableDVDMeasures;
+        return await browser.asControl(this.productMeasuresPortableDVDSelector).getText();
     }
 
     async getSrcProductImage() {
-        const srcProductImage = await browser.asControl(this.productImageSelector).getSrc();
-        return await srcProductImage;
+        return await browser.asControl(this.productImageSelector).getSrc();
     }
 
     async pressProductImage() {
@@ -269,13 +246,11 @@ class ProductPage extends Page {
     }
 
     async getImageSrcLargePopUpImage() {
-        const imageSrcLargePopUpImage = await browser.asControl(this.largePopUpImageSelector).getImageSrc();
-        return await imageSrcLargePopUpImage;
+        return await browser.asControl(this.largePopUpImageSelector).getImageSrc();
     }
 
     async getTitleLargePopUpImage() {
-        const titleLargePopUpImage = await browser.asControl(this.largePopUpImageSelector).getTitle();
-        return await titleLargePopUpImage;
+        return await browser.asControl(this.largePopUpImageSelector).getTitle();
     }
 
     async pressPopUpCloseButton() {
@@ -283,18 +258,15 @@ class ProductPage extends Page {
     }
 
     async getTextAddToShoppingCartButton() {
-        const textAddToShoppingCartButton = await browser.asControl(this.addToShoppingCartButtonSelector).getText();
-        return await textAddToShoppingCartButton;
+        return await browser.asControl(this.addToShoppingCartButtonSelector).getText();
     }
 
     async getEnabledAddToShoppingCartButton() {
-        const enabledAddToShoppingCartButton = await browser.asControl(this.addToShoppingCartButtonSelector).getEnabled();
-        return await enabledAddToShoppingCartButton;
+        return await browser.asControl(this.addToShoppingCartButtonSelector).getEnabled();
     }
 
     async getVisibleAddToShoppingCartButton() {
-        const visibleAddToShoppingCartButton = await browser.asControl(this.addToShoppingCartButtonSelector).getVisible();
-        return await visibleAddToShoppingCartButton;
+        return await browser.asControl(this.addToShoppingCartButtonSelector).getVisible();
     }
 
     async pressAddToShoppingCartButton() {
@@ -302,8 +274,7 @@ class ProductPage extends Page {
     }
 
     async getTextTitleShoppingCart() {
-        const textTitleShoppingCart = await browser.asControl(this.titleShoppingCartSelector).getText();
-        return await textTitleShoppingCart;
+        return await browser.asControl(this.titleShoppingCartSelector).getText();
     }
 }
 

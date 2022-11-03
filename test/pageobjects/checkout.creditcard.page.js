@@ -11,9 +11,8 @@ class CheckOutPageCreditCard extends Page {
      */
     // /**
 
-
     get getCardHoldersNameSelector() {
-        const getCardHoldersNameSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Label",
                 viewId: "container-cart---checkoutView",
@@ -23,11 +22,10 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return getCardHoldersNameSelector
     }
 
     get getCardNumberSelector() {
-        const getCardNumberSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Label",
                 viewId: "container-cart---checkoutView",
@@ -37,12 +35,11 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return getCardNumberSelector
     }
 
 
     get inputCardHolderName() {
-        const inputCardHolderName = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--creditCardHolderName",
                 interaction: {
@@ -50,11 +47,10 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return inputCardHolderName
     }
 
     get inputCardNumber() {
-        const inputCardNumber = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--creditCardNumber",
                 interaction: {
@@ -62,12 +58,10 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return inputCardNumber
     }
 
-
     get getControlDigitsSelector() {
-        const getControlDigitsSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Label",
                 viewId: "container-cart---checkoutView",
@@ -80,11 +74,10 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return getControlDigitsSelector
     }
 
     get expirationDateSelector() {
-        const expirationDateSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Label",
                 viewId: "container-cart---checkoutView",
@@ -97,11 +90,10 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return expirationDateSelector
     }
 
     get inputControlDigits() {
-        const inputControlDigits = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--creditCardSecurityNumber",
                 interaction: {
@@ -109,11 +101,10 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return inputControlDigits
     }
 
     get inputExpirationDate() {
-        const inputExpirationDate = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--creditCardExpirationDate",
                 interaction: {
@@ -121,11 +112,10 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return inputExpirationDate
     }
 
     get nextStepButton() {
-        const nextStepButton = {
+        return {
             selector: {
                 id: "container-cart---checkoutView--creditCardStep-nextButton",
                 interaction: {
@@ -133,48 +123,42 @@ class CheckOutPageCreditCard extends Page {
                 }
             }
         }
-        return nextStepButton
     }
 
+    //  * a method to encapsule automation code to interact with the page
+    //  * e.g. to login using username and password
+    //  */
 
     async getTextCardHoldersNameDescriptionText() {
-        const textCardHoldersName = await browser.asControl(this.getCardHoldersNameSelector).getText();
-        return await textCardHoldersName;
+        return await browser.asControl(this.getCardHoldersNameSelector).getText();
     }
 
     async getRequiredCardHoldersNameDescriptionText() {
-        const requiredCardHoldersName = await browser.asControl(this.getCardHoldersNameSelector).getRequired();
-        return await requiredCardHoldersName;
+        return await browser.asControl(this.getCardHoldersNameSelector).getRequired();
     }
 
     async getTextCardNumber() {
-        const textCardNumber = await browser.asControl(this.getCardNumberSelector).getText();
-        return await textCardNumber;
+        return await browser.asControl(this.getCardNumberSelector).getText();
     }
 
     async getRequiredCardNumber() {
-        const requiredCardNumber = await browser.asControl(this.getCardNumberSelector).getRequired();
-        return await requiredCardNumber;
+        return await browser.asControl(this.getCardNumberSelector).getRequired();
     }
 
     async getTextControlDigits() {
-        const textControlDigits = await browser.asControl(this.getControlDigitsSelector).getText();
-        return await textControlDigits;
+        return await browser.asControl(this.getControlDigitsSelector).getText();
     }
 
     async getRequiredControlDigits() {
-        const requiredControlDigits = await browser.asControl(this.getControlDigitsSelector).getRequired();
-        return await requiredControlDigits;
+        return await browser.asControl(this.getControlDigitsSelector).getRequired();
     }
 
     async getTextExpirationDate() {
-        const textExpirationDate = await browser.asControl(this.expirationDateSelector).getText();
-        return await textExpirationDate;
+        return await browser.asControl(this.expirationDateSelector).getText();
     }
 
     async getRequiredExpirationDate() {
-        const requiredExpirationDate = await browser.asControl(this.expirationDateSelector).getRequired();
-        return await requiredExpirationDate;
+        return await browser.asControl(this.expirationDateSelector).getRequired();
     }
 
     async enterTextInputCardHolderName(name) {

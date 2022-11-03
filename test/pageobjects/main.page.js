@@ -12,7 +12,7 @@ class MainPage extends Page {
     // /**
 
     get welcomeTextSelector() {
-        const welcomeTextSelector = {
+        return {
             selector: {
                 controlType: "sap.m.Title",
                 viewId: "container-cart---welcomeView",
@@ -25,11 +25,10 @@ class MainPage extends Page {
                 }
             }
         }
-        return welcomeTextSelector
     }
 
     get categoryAccessoiresSelector() {
-        const categoryAccessoiresSelector = {
+        return {
             selector: {
                 controlType: "sap.m.StandardListItem",
                 viewId: "container-cart---homeView",
@@ -42,11 +41,10 @@ class MainPage extends Page {
                 }
             }
         }
-        return categoryAccessoiresSelector
     }
 
     get shoppingCartSelector() {
-        const shoppingCartSelector = {
+        return {
             selector: {
                 controlType: "sap.ui.core.Icon",
                 viewId: "container-cart---welcomeView",
@@ -68,11 +66,10 @@ class MainPage extends Page {
                 }
             }
         }
-        return shoppingCartSelector
     }
 
     get shoppingCartIconSelector() {
-        const shoppingCartIconSelector = {
+        return {
             selector: {
                 controlType: "sap.ui.core.Icon",
                 viewId: "container-cart---product",
@@ -85,22 +82,18 @@ class MainPage extends Page {
                 }
             }
         }
-        return shoppingCartIconSelector
     }
-
 
     //  * a method to encapsule automation code to interact with the page
     //  * e.g. to login using username and password
     //  */
 
     async getTextWelcomeTextSelector() {
-        const welcomeText = await browser.asControl(this.welcomeTextSelector).getText();
-        return await welcomeText;
+        return await browser.asControl(this.welcomeTextSelector).getText();
     }
 
     async getTitleCategoryAccessoiresSelector() {
-        const categoryText = await browser.asControl(this.categoryAccessoiresSelector).getTitle();
-        return await categoryText;
+        return await browser.asControl(this.categoryAccessoiresSelector).getTitle();
     }
 
     async pressCategoryAccessoiresSelector() {
@@ -108,45 +101,20 @@ class MainPage extends Page {
     }
 
     async getSrcShoppingCartIcon() {
-        const srcShoppingCartIcon = await browser.asControl(this.shoppingCartIconSelector).getSrc();
-        return await srcShoppingCartIcon;
+        return await browser.asControl(this.shoppingCartIconSelector).getSrc();
     }
 
     async getBlockedShoppingCartIcon() {
-        const blockedShoppingCartIcon = await browser.asControl(this.shoppingCartIconSelector).getBlocked();
-        return await blockedShoppingCartIcon;
+        return await browser.asControl(this.shoppingCartIconSelector).getBlocked();
     }
 
     async getVisibleShoppingCartIcon() {
-        const visibleShoppingCartIcon = await browser.asControl(this.shoppingCartIconSelector).getVisible();
-        return await visibleShoppingCartIcon;
+        return await browser.asControl(this.shoppingCartIconSelector).getVisible();
     }
 
     async pressShoppingCartIcon() {
         await browser.asControl(this.shoppingCartIconSelector).press();
     }
-
-
-    // async getCategorySelector(categoryName) {
-
-    //     const categorySelector = {
-    //         selector: {
-    //             controlType: "sap.m.StandardListItem",
-    //             viewId: "container-cart---homeView",
-    //             bindingPath: {
-    //                 path: "/ProductCategories('" + categoryName + "')",
-    //                 propertyPath: "CategoryName"
-    //             },
-    //             interaction: {
-    //                 idSuffix: "content"
-    //             }
-
-    //         }
-    //     }
-    //     const categorySelector2 = await browser.asControl(categorySelector).getTitle();
-    //     return categorySelector2
-    // }
-
 
     open() {
         return super.open('index.html');
