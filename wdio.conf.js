@@ -57,8 +57,7 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
-        acceptInsecureCerts: true
-        ,
+        acceptInsecureCerts: true,
         "goog:chromeOptions": {
             args: ["--window-size=1440,800", "--headless", "--log-level=3", "--lang=en-US"]
         },
